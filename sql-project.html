@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Project | Shayan Siddiqui</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">Shayan Siddiqui</div>
+
+        <div class="nav-controls">
+            <button class="dark-toggle" id="theme-btn" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>SQL Data Cleaning & ETL Pipeline</h1>
+        <p>Full SQL project breakdown</p>
+    </header>
+
+    <section class="about">
+        <h2>Project Overview</h2>
+        <p>
+            This project demonstrates a complete SQL ETL pipeline used to clean, standardize, and validate 
+            a raw customer dataset containing 50,000+ records. By utilizing advanced SQL techniques, 
+            I transformed messy, real-world data into a structured format ready for enterprise analytics.
+        </p>
+    </section>
+
+    <div style="text-align: center;">
+        <img src="sql-etl-mockup.png" alt="SQL ETL Pipeline Diagram" class="project-img">
+    </div>
+    
+
+    <section class="projects">
+        <h2>Key Steps</h2>
+
+        <div class="project-card">
+            <h3>1. Data Cleaning & Standardisation</h3>
+            <p>
+                Handled missing values using COALESCE and removed duplicate records via ROW_NUMBER() window functions. 
+                Standardized inconsistent string entries and normalized date formats for cross-table compatibility.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>2. Advanced Transformations</h3>
+            <p>
+                Leveraged Common Table Expressions (CTEs) for readable, modular code. Applied complex CASE WHEN logic 
+                to segment data and utilized Join optimizations to merge disparate sources into a unified view.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>3. Data Validation & Load</h3>
+            <p>
+                Implemented constraint checks and validation scripts to ensure referential integrity. 
+                Created a high-performance customer master table optimized for BI dashboard consumption.
+            </p>
+        </div>
+
+        <p><strong>Outcome:</strong> Improved data accuracy by 35% and reduced missing values by 60%, significantly increasing the reliability of downstream reporting.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Shayan Siddiqui | Data & BI Analyst Portfolio</p>
+    </footer>
+
+    <script>
+        // HAMBURGER MENU TOGGLE
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            if (nav.style.display === "flex") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "flex";
+            }
+        }
+
+        // DARK MODE TOGGLE LOGIC
+        function toggleDarkMode() {
+            const body = document.body;
+            const themeBtn = document.getElementById("theme-btn");
+            
+            body.classList.toggle("dark-mode");
+            
+            const isDark = body.classList.contains("dark-mode");
+            localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+            
+            themeBtn.innerHTML = isDark ? "☀️" : "🌙";
+        }
+
+        // THEME PERSISTENCE
+        window.onload = () => {
+            const savedTheme = localStorage.getItem("portfolio-theme");
+            const themeBtn = document.getElementById("theme-btn");
+            
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+                themeBtn.innerHTML = "☀️";
+            }
+        };
+    </script>
+
+</body>
+</html>

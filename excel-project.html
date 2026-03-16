@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Project | Shayan Siddiqui</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">Shayan Siddiqui</div>
+
+        <div class="nav-controls">
+            <button class="dark-toggle" id="theme-btn" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Excel Automated Financial KPI Tracker</h1>
+        <p>Full Excel project breakdown</p>
+    </header>
+
+    <section class="about">
+        <h2>Project Overview</h2>
+        <p>
+            This project demonstrates how Excel can be used to automate financial KPI reporting using 
+            PivotTables, Power Query, advanced formulas, and dynamic visuals. The tracker consolidates 
+            monthly financial data and produces automated KPI summaries for leadership.
+        </p>
+    </section>
+
+    <div style="text-align: center;">
+        <img src="excel-dashboard-mockup.png" alt="Excel Financial Dashboard Mockup" class="project-img">
+    </div>
+
+    <section class="projects">
+        <h2>Key Features</h2>
+
+        <div class="project-card">
+            <h3>1. Data Import & Power Query Automation</h3>
+            <p>
+                Connected Excel to multiple monthly CSV files using Power Query. Applied transformations, 
+                merged tables, and automated refresh to eliminate manual data preparation.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>2. KPI Calculations</h3>
+            <p>
+                Built KPI formulas using SUMIFS, XLOOKUP, INDEX/MATCH, and dynamic named ranges. 
+                Created automated metrics such as Revenue, Operating Margin, and Cost Variance.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>3. PivotTables & Dashboards</h3>
+            <p>
+                Designed interactive PivotTables and charts to visualise trends across months, departments, 
+                and cost centres. Added slicers for dynamic filtering.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>4. Conditional Formatting</h3>
+            <p>
+                Applied colour‑coded rules to highlight performance against targets, making insights 
+                easy to interpret at a glance.
+            </p>
+        </div>
+
+        <p><strong>Outcome:</strong> Reduced manual reporting time by 50% and improved accuracy of monthly financial reports.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Shayan Siddiqui | Data & BI Analyst Portfolio</p>
+    </footer>
+
+    <script>
+        // HAMBURGER MENU TOGGLE
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            if (nav.style.display === "flex") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "flex";
+            }
+        }
+
+        // DARK MODE TOGGLE LOGIC
+        function toggleDarkMode() {
+            const body = document.body;
+            const themeBtn = document.getElementById("theme-btn");
+            
+            body.classList.toggle("dark-mode");
+            
+            const isDark = body.classList.contains("dark-mode");
+            localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+            
+            themeBtn.innerHTML = isDark ? "☀️" : "🌙";
+        }
+
+        // CHECK SAVED THEME ON LOAD (Ensures persistence across pages)
+        window.onload = () => {
+            const savedTheme = localStorage.getItem("portfolio-theme");
+            const themeBtn = document.getElementById("theme-btn");
+            
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+                themeBtn.innerHTML = "☀️";
+            }
+        };
+    </script>
+
+</body>
+</html>

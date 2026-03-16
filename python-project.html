@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Project | Shayan Siddiqui</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">Shayan Siddiqui</div>
+
+        <div class="nav-controls">
+            <button class="dark-toggle" id="theme-btn" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Python Customer Segmentation Model</h1>
+        <p>Full Python project breakdown</p>
+    </header>
+
+    <section class="about">
+        <h2>Project Overview</h2>
+        <p>
+            This project demonstrates how Python can be used to segment customers based on purchasing behaviour. 
+            Using Pandas, NumPy, Scikit‑learn, and Matplotlib, the project performs data cleaning, feature engineering, 
+            clustering, and visualisation to identify meaningful customer groups.
+        </p>
+    </section>
+
+    <div style="text-align: center;">
+        <img src="python-cleaning-mockup.png" alt="Python Clustering Visualization" class="project-img">
+    </div>
+
+    <section class="projects">
+        <h2>Key Steps</h2>
+
+        <div class="project-card">
+            <h3>1. Data Preparation</h3>
+            <p>
+                Cleaned and preprocessed customer transaction data. Handled missing values, removed outliers, 
+                and engineered new behavioural features such as purchase frequency and average spend.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>2. Feature Scaling</h3>
+            <p>
+                Applied StandardScaler to normalise numerical features, ensuring fair distance calculations 
+                during clustering.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>3. K‑Means Clustering</h3>
+            <p>
+                Used the Elbow Method to determine the optimal number of clusters. Trained a K‑Means model 
+                to segment customers into 4 distinct groups.
+            </p>
+            
+        </div>
+
+        <div class="project-card">
+            <h3>4. Visualisation</h3>
+            <p>
+                Created scatter plots and cluster visualisations using Matplotlib and Seaborn to interpret 
+                customer behaviour patterns.
+            </p>
+        </div>
+
+        <p><strong>Outcome:</strong> Identified 4 customer segments, enabling targeted marketing strategies and improving campaign efficiency by 20%.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Shayan Siddiqui | Data & BI Analyst Portfolio</p>
+    </footer>
+
+    <script>
+        // HAMBURGER MENU TOGGLE
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            if (nav.style.display === "flex") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "flex";
+            }
+        }
+
+        // DARK MODE TOGGLE LOGIC
+        function toggleDarkMode() {
+            const body = document.body;
+            const themeBtn = document.getElementById("theme-btn");
+            
+            body.classList.toggle("dark-mode");
+            
+            const isDark = body.classList.contains("dark-mode");
+            localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+            
+            themeBtn.innerHTML = isDark ? "☀️" : "🌙";
+        }
+
+        // CHECK SAVED THEME ON LOAD
+        window.onload = () => {
+            const savedTheme = localStorage.getItem("portfolio-theme");
+            const themeBtn = document.getElementById("theme-btn");
+            
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+                themeBtn.innerHTML = "☀️";
+            }
+        };
+    </script>
+
+</body>
+</html>
+

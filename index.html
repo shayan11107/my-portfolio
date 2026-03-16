@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shayan Siddiqui | Data & BI Analyst</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">Shayan Siddiqui</div>
+
+        <div class="nav-controls">
+            <button class="dark-toggle" id="theme-btn" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="profile-container">
+            <img src="profile.png" alt="Shayan Siddiqui" class="profile-pic">
+        </div>
+        <h1>Shayan Siddiqui</h1>
+        <p>Business Intelligence • Data Analysis • SQL • Python • Power BI</p>
+        <div class="header-buttons">
+            <a href="#contact" class="btn">Contact Me</a>
+<a href="ShayanCV2026.pdf" class="btn btn-outline" download>Download CV</a>        </div>
+    </header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a results-driven BI & Reporting Analyst with professional experience at 
+            <strong>Lloyds Banking Group</strong> and <strong>OVO Energy</strong>. I specialise 
+            in SQL, Power BI, and Python to build automated dashboards and streamline reporting 
+            processes that drive actionable business insights. This portfolio showcases my technical 
+            projects across data cleaning, predictive modeling, and business intelligence.
+        </p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+            <h3>🗄 SQL Data Cleaning & ETL Pipeline</h3>
+            <p>
+                Built a full SQL ETL pipeline to clean and validate a raw customer dataset containing 
+                50,000+ records. Used CTEs and window functions to create a clean master table.
+            </p>
+            <p><strong>Outcome:</strong> Improved data accuracy by 35% and reduced missing values by 60%.</p>
+            <a href="sql-project.html" class="btn">View SQL Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🐍 Python Customer Segmentation Model</h3>
+            <p>
+                Developed a machine learning model using Scikit‑learn to segment customers based on 
+                purchasing behaviour. Performed feature scaling and K-Means clustering.
+            </p>
+            <p><strong>Outcome:</strong> Identified 4 customer segments, improving marketing efficiency by 20%.</p>
+            <a href="python-project.html" class="btn">View Python Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>📊 Power BI Sales Performance Dashboard</h3>
+            <p>
+                Designed an interactive dashboard to track monthly sales and churn. Used DAX and 
+                Power Query to build a dynamic reporting solution.
+            </p>
+            <p><strong>Outcome:</strong> Reduced manual reporting time by 40%.</p>
+            <a href="powerbi-project.html" class="btn">View Power BI Dashboard</a>
+        </div>
+
+        <div class="project-card">
+            <h3>📗 Excel Automated Financial KPI Tracker</h3>
+            <p>
+                Created an automated KPI tracker using Power Query and XLOOKUP to reduce manual effort.
+            </p>
+            <p><strong>Outcome:</strong> Reduced manual reporting effort by 50%.</p>
+            <a href="excel-project.html" class="btn">View Excel Project</a>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>SQL (joins, CTEs, window functions)</li>
+            <li>Power BI (DAX, Power Query, data modelling)</li>
+            <li>Python (Pandas, NumPy, Matplotlib)</li>
+            <li>Excel (advanced formulas, automation)</li>
+            <li>Data cleaning & ETL</li>
+            <li>Dashboard design & storytelling</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to connect or discuss opportunities, feel free to reach out:</p>
+        <ul>
+            <li>Email: <a href="mailto:shayan544@yahoo.co.in">shayan544@yahoo.co.in</a></li>
+            <li>Mobile: <a href="tel:+447776827057">+44 7776 827057</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/shayan-siddiqui-67783320a" target="_blank">linkedin.com/in/shayan-siddiqui</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2026 Shayan Siddiqui | Data & BI Analyst Portfolio</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const themeBtn = document.getElementById("theme-btn");
+            body.classList.toggle("dark-mode");
+            const isDark = body.classList.contains("dark-mode");
+            localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+            themeBtn.innerHTML = isDark ? "☀️" : "🌙";
+        }
+
+        window.onload = () => {
+            const savedTheme = localStorage.getItem("portfolio-theme");
+            const themeBtn = document.getElementById("theme-btn");
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+                themeBtn.innerHTML = "☀️";
+            }
+        };
+    </script>
+
+</body>
+</html>
+
+
