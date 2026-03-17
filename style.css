@@ -125,7 +125,7 @@ header {
     height: 170px;
     border-radius: 50%;
     object-fit: cover; 
-    object-position: top center; /* Prevents hair from being cut off */
+    object-position: top center; 
     border: 5px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -143,7 +143,6 @@ header {
     flex-wrap: wrap;
 }
 
-/* Dark mode specific adjustments */
 body.dark-mode header,
 body.dark-mode footer {
     background: var(--nav-bg);
@@ -157,7 +156,7 @@ body.dark-mode .profile-pic {
 }
 
 /* ------------------------------
-   EXPERIENCE SECTION
+   EXPERIENCE SECTION (FIXED DATES)
 ------------------------------ */
 .experience {
     background: var(--card-bg);
@@ -182,7 +181,7 @@ body.dark-mode .profile-pic {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevents wrapping on desktop */
 }
 
 .exp-header h3 {
@@ -195,6 +194,8 @@ body.dark-mode .profile-pic {
     font-weight: 600;
     font-size: 0.9rem;
     opacity: 0.8;
+    white-space: nowrap; /* CRITICAL: Fixes mobile date splitting */
+    margin-left: 10px;
 }
 
 .exp-company {
@@ -239,7 +240,7 @@ body.dark-mode .profile-pic {
 }
 
 /* ------------------------------
-   PROJECT CARDS & SECTIONS
+   PROJECT CARDS
 ------------------------------ */
 section {
     padding: 40px 20px;
@@ -302,7 +303,7 @@ body.dark-mode .btn-outline {
 }
 
 /* ------------------------------
-   FOOTER & MOBILE
+   FOOTER & MOBILE RESPONSIVENESS
 ------------------------------ */
 footer {
     background: var(--accent);
@@ -333,8 +334,21 @@ footer {
         box-shadow: 0 4px 12px var(--shadow);
     }
     .hamburger { display: block; }
-    .header-buttons { flex-direction: column; align-items: center; }
-    .exp-header { flex-direction: column; align-items: flex-start; }
+    
+    .header-buttons { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .exp-header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    
+    .exp-date {
+        margin-left: 0;
+        margin-top: 5px;
+    }
 }
 
 
