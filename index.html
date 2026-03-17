@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOC<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,9 +19,10 @@
 
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -33,7 +34,8 @@
         <p>Business Intelligence • Data Analysis • SQL • Python • Power BI</p>
         <div class="header-buttons">
             <a href="#contact" class="btn">Contact Me</a>
-<a href="ShayanCV2026.pdf" class="btn btn-outline" download>Download CV</a>        </div>
+            <a href="ShayanCV2026.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
     </header>
 
     <section class="about">
@@ -42,9 +44,60 @@
             I am a results-driven BI & Reporting Analyst with professional experience at 
             <strong>Lloyds Banking Group</strong> and <strong>OVO Energy</strong>. I specialise 
             in SQL, Power BI, and Python to build automated dashboards and streamline reporting 
-            processes that drive actionable business insights. This portfolio showcases my technical 
-            projects across data cleaning, predictive modeling, and business intelligence.
+            processes that drive actionable business insights.
         </p>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2>Professional Experience</h2>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>BI & Reporting Analyst</h3>
+                <span class="exp-date">11/2024 - Present</span>
+            </div>
+            <p class="exp-company">Lloyds Banking Group | Glasgow, UK</p>
+            <ul>
+                <li>Engineered high-priority Power BI dashboards by architecting complex SQL ETL pipelines.</li>
+                <li>Automated reporting workflows, saving <strong>15+ hours per week</strong> and reducing overhead by 20%.</li>
+                <li>Optimized SQL data models to achieve 100% reconciliation accuracy and 30% improved reliability.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>CRM Analyst (Salesforce)</h3>
+                <span class="exp-date">08/2023 - 10/2024</span>
+            </div>
+            <p class="exp-company">OVO Energy | Glasgow, UK</p>
+            <ul>
+                <li>Managed Salesforce objects and data integrity processes, improving quality by 25%.</li>
+                <li>Supported data migration and multi-system validation using JIRA for project coordination.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>Business Analyst (Data)</h3>
+                <span class="exp-date">07/2019 - 12/2021</span>
+            </div>
+            <p class="exp-company">Sams Cuero Moda Pvt Ltd | Kolkata, India</p>
+            <ul>
+                <li>Analyzed business processes and built KPI dashboards to reduce reporting errors by 20%.</li>
+                <li>Collaborated with cross-functional teams to improve data validation and reporting accuracy.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>Product Marketing Intern</h3>
+                <span class="exp-date">01/2019 - 04/2019</span>
+            </div>
+            <p class="exp-company">Hidekraft Fashion | Kolkata, India</p>
+            <ul>
+                <li>Conducted market research and competitor analysis to support targeted campaign execution.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="projects" class="projects">
@@ -52,54 +105,47 @@
 
         <div class="project-card">
             <h3>🗄 SQL Data Cleaning & ETL Pipeline</h3>
-            <p>
-                Built a full SQL ETL pipeline to clean and validate a raw customer dataset containing 
-                50,000+ records. Used CTEs and window functions to create a clean master table.
-            </p>
+            <p>Built a full SQL ETL pipeline to clean and validate a raw customer dataset containing 50,000+ records.</p>
             <p><strong>Outcome:</strong> Improved data accuracy by 35% and reduced missing values by 60%.</p>
             <a href="sql-project.html" class="btn">View SQL Project</a>
         </div>
 
         <div class="project-card">
             <h3>🐍 Python Customer Segmentation Model</h3>
-            <p>
-                Developed a machine learning model using Scikit‑learn to segment customers based on 
-                purchasing behaviour. Performed feature scaling and K-Means clustering.
-            </p>
+            <p>Developed a machine learning model using Scikit‑learn to segment customers based on purchasing behaviour.</p>
             <p><strong>Outcome:</strong> Identified 4 customer segments, improving marketing efficiency by 20%.</p>
             <a href="python-project.html" class="btn">View Python Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>📊 Power BI Sales Performance Dashboard</h3>
-            <p>
-                Designed an interactive dashboard to track monthly sales and churn. Used DAX and 
-                Power Query to build a dynamic reporting solution.
-            </p>
-            <p><strong>Outcome:</strong> Reduced manual reporting time by 40%.</p>
-            <a href="powerbi-project.html" class="btn">View Power BI Dashboard</a>
-        </div>
-
-        <div class="project-card">
-            <h3>📗 Excel Automated Financial KPI Tracker</h3>
-            <p>
-                Created an automated KPI tracker using Power Query and XLOOKUP to reduce manual effort.
-            </p>
-            <p><strong>Outcome:</strong> Reduced manual reporting effort by 50%.</p>
-            <a href="excel-project.html" class="btn">View Excel Project</a>
         </div>
     </section>
 
     <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>SQL (joins, CTEs, window functions)</li>
-            <li>Power BI (DAX, Power Query, data modelling)</li>
-            <li>Python (Pandas, NumPy, Matplotlib)</li>
-            <li>Excel (advanced formulas, automation)</li>
-            <li>Data cleaning & ETL</li>
-            <li>Dashboard design & storytelling</li>
-        </ul>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Data Analysis & Reporting</h3>
+                <ul>
+                    <li>SQL (MySQL, Data Reconciliation, Validation)</li>
+                    <li>Power BI (Dashboards, KPI Reporting, Insight Generation)</li>
+                    <li>Advanced Excel (XLOOKUP, Pivot Tables, Modeling)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Data Engineering & Automation</h3>
+                <ul>
+                    <li>ETL/ELT Pipeline Automation</li>
+                    <li>Relational Databases & Large Datasets</li>
+                    <li>AI-Assisted Analytics (LLMs for SQL Optimization)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <ul>
+                    <li>Salesforce, ServiceNow, JIRA</li>
+                    <li>Python (Pandas, NumPy, Matplotlib)</li>
+                    <li>Analytical Problem Solving & Stakeholder Communication</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="contact">
@@ -143,5 +189,3 @@
 
 </body>
 </html>
-
-
